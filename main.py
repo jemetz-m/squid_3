@@ -3,10 +3,25 @@ import os
 
 folder = os.getcwd()
 
-if os.path.exists(folder + '\\squid_folder') == False :
-    print("Le folder demandé n'existe pas.")
+exec(open(folder + "\\library.py").read())
+
+if not os.path.exists(folder + "\\squid_folder"):
+
+    os.makedirs(folder + '\\squid_folder')
+
+    print("Le folder demandé vient d'être créé.")
+
+    os.rmdir(folder + '\\squid_folder')
+
+    print("Le folder demandé a été supprimé avec succès")
+
 else :
+
     print("Le folder est déjà existant")
+
+    os.rmdir(folder + '\\squid_folder')
+
+    print("Le folder demandé a été supprimé avec succès")
 
 
 
